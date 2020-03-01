@@ -1,0 +1,18 @@
+{
+  // ESLint & Prettier setting
+  "eslint.enable": true,
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "editor.formatOnSave": false,
+
+  // Editor setting
+  "editor.rulers": [
+    80,
+    100
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+}
