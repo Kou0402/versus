@@ -11,7 +11,7 @@
 
 <script>
 import Hero from '~/components/organisms/hero.vue'
-import ThreadCard from '~/components/atoms/thread-card.vue'
+import ThreadCard from '~/components/molecules/thread-card.vue'
 export default {
   components: {
     Hero,
