@@ -7,6 +7,7 @@
       </a>
 
       <a
+        v-click-outside="hide"
         :class="{ 'is-active': isOpen }"
         @click="isOpen = !isOpen"
         aria-label="menu"
@@ -45,10 +46,20 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
+
 export default {
+  directives: {
+    ClickOutside
+  },
   data() {
     return {
       isOpen: false
+    }
+  },
+  methods: {
+    hide() {
+      this.isOpen = false
     }
   }
 }
