@@ -1,0 +1,58 @@
+{
+  "threads": [
+    {
+      "threadId": "001",
+      "createdUserName": "test-user-001",
+      "createdDate": "2020-03-13",
+      "createdTime": "19:00:00",
+      "theme1": "Vue.js",
+      "theme2": "React"
+    },
+    {
+      "threadId": "002",
+      "createdUserName": "test-user-002",
+      "createdDate": "2020-03-13",
+      "createdTime": "19:00:00",
+      "theme1": "React",
+      "theme2": "Angular"
+    },
+    {
+      "threadId": "003",
+      "createdUserName": "test-user-003",
+      "createdDate": "2020-03-13",
+      "createdTime": "2020-03-13",
+      "theme1": "Angular",
+      "theme2": "Vue.js"
+    }
+  ],
+
+  "posts": [
+    {
+      "postId": "001",
+      "threadId": "001",
+      "createdUserName": "test-user-001",
+      "createdDate": "2020-03-13",
+      "createdTime": "2020-03-13",
+      "position": "theme1",
+      "content": "Vue.jsが好きです。"
+    },
+    {
+      "postId": "001",
+      "threadId": "002",
+      "createdUserName": "test-user-002",
+      "createdDate": "2020-03-13",
+      "createdTime": "2020-03-13",
+      "position": "theme1",
+      "content": "Reactが好きです。"
+    },
+    {
+      "postId": "001",
+      "threadId": "003",
+      "createdUserName": "test-user-003",
+      "createdDate": "2020-03-13",
+      "createdTime": "2020-03-13",
+      "position": "theme1",
+      "content": "Angularが好きです。"
+    }
+  ]
+}
