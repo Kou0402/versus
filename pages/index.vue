@@ -1,11 +1,13 @@
 <template>
   <main>
     <Hero></Hero>
-    <ThreadCard></ThreadCard>
-    <ThreadCard></ThreadCard>
-    <ThreadCard></ThreadCard>
-    <ThreadCard></ThreadCard>
-    <ThreadCard></ThreadCard>
+    <ThreadCard
+      v-for="thread in threads"
+      :key="thread.threadId"
+      :thread-id="thread.threadId"
+      :theme1="thread.theme1"
+      :theme2="thread.theme2"
+    ></ThreadCard>
   </main>
 </template>
 
@@ -16,6 +18,17 @@ export default {
   components: {
     Hero,
     ThreadCard
+  },
+  async fetch({ store }) {
+    await store.dispatch('thread/fetchThreads')
+  },
+  computed: {
+    threads() {
+      return this.$store.getters['thread/threads']
+    }
+  },
+  beforeDestroy() {
+    this.$store.dispatch('thread/deleteThreads')
   }
 }
 </script>

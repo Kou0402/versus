@@ -8,7 +8,9 @@
         <h2 class="subtitle">
           二つのテーマを持ち寄って意見をぶつけ合おう！
         </h2>
-        <button class="button is-primary">スレッドを作成する</button>
+        <nuxt-link class="button is-primary" to="thread-create">
+          スレッドを作成する
+        </nuxt-link>
       </div>
     </div>
   </section>
