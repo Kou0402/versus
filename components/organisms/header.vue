@@ -5,16 +5,15 @@
         <img class="logo" src="~/assets/images/fire.svg" />
         Versus
       </a>
-
       <a
         v-click-outside="hide"
         :class="{ 'is-active': isOpen }"
-        @click="isOpen = !isOpen"
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarBasicExample"
         role="button"
         class="navbar-burger burger"
+        @click="isOpen = !isOpen"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
