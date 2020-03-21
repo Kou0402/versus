@@ -72,7 +72,7 @@ export default {
   methods: {
     onClickCreateThreadButton() {
       this.publishThread()
-      const threads = this.$store.getters['thread/threads']
+      const threads = this.$store.getters['threads/threads']
       const createdThread = threads.pop()
       this.publishPost(createdThread.threadId)
     },
@@ -89,7 +89,7 @@ export default {
         theme1: this.theme1,
         theme2: this.theme2
       }
-      this.$store.dispatch('thread/publishThread', thread)
+      this.$store.dispatch('threads/publishThread', thread)
     },
 
     publishPost(threadId) {

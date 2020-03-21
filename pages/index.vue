@@ -20,15 +20,15 @@ export default {
     ThreadCard
   },
   async fetch({ store }) {
-    await store.dispatch('thread/fetchThreads')
+    await store.dispatch('threads/fetchThreads')
   },
   computed: {
     threads() {
-      return this.$store.getters['thread/threads']
+      return this.$store.getters['threads/threads']
     }
   },
   beforeDestroy() {
-    this.$store.dispatch('thread/deleteThreads')
+    this.$store.dispatch('threads/deleteThreads')
   }
 }
 </script>
