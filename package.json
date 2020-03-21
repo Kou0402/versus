@@ -18,7 +18,8 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "dayjs": "^1.8.23",
     "nuxt": "^2.11.0",
-    "vue-click-outside": "^1.0.7"
+    "vue-click-outside": "^1.0.7",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.2",
