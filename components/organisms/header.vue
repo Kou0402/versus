@@ -74,5 +74,9 @@ export default {
       }
     }
   }
+  .navbar-menu.is-active {
+    position: absolute;
+    width: 100%;
+  }
 }
 </style>
