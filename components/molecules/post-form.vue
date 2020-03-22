@@ -3,30 +3,81 @@
     <div class="form-area">
       <div class="columns is-mobile select-area">
         <div class="column is-5 is-offset-1">
-          <button class="button is-small is-fullwidth">Vue.js</button>
+          <ToggleRadioButton v-model="position" :label="theme1" value="theme1">
+          </ToggleRadioButton>
         </div>
         <div class="column is-5 input-area">
-          <button class="button is-small is-fullwidth">Vue.js</button>
+          <ToggleRadioButton v-model="position" :label="theme2" value="theme2">
+          </ToggleRadioButton>
         </div>
       </div>
       <div class="columns is-mobile">
         <div class="column is-8 is-offset-1">
-          <input class="input is-small" type="text" />
+          <textarea v-model="content" class="textarea" rows="1"></textarea>
         </div>
         <div class="column is-2">
-          <img src="~/assets/images/right-arrow.svg" />
+          <img src="~/assets/images/right-arrow.svg" @click="onClickSubmit" />
         </div>
       </div>
     </div>
   </section>
 </template>
 
+<script>
+import ToggleRadioButton from '~/components/molecules/toggle-radio-button.vue'
+
+export default {
+  components: {
+    ToggleRadioButton
+  },
+  props: {
+    threadId: {
+      type: String,
+      default: ''
+    },
+    theme1: {
+      type: String,
+      default: ''
+    },
+    theme2: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      position: 'theme1',
+      content: ''
+    }
+  },
+  methods: {
+    onClickSubmit() {
+      this.publishPost(this.threadId)
+    },
+
+    publishPost(threadId) {
+      const post = {
+        threadId,
+        createdUserName: undefined,
+        createdDate: this.$dayjs().format('YYYY-MM-DD'),
+        createdTime: this.$dayjs().format('HH:mm:ss'),
+        position: this.position,
+        side: this.position === this.theme1 ? 'left' : 'right',
+        content: this.content
+      }
+      this.$store.dispatch('posts/publishPost', post)
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .post-form {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 12%;
+  // height: 12%;
+  height: 14%;
   background-color: $main-color4;
   > .form-area {
     > .select-area {

@@ -5,7 +5,7 @@
   >
     <section class="post-info">
       <div class="post-user-name">{{ postUserName }}</div>
-      <div class="posted-date">{{ postedDate }}</div>
+      <div class="created-at">{{ createdAt }}</div>
     </section>
     <section class="post-content">
       <p>{{ postContent }}</p>
@@ -18,15 +18,15 @@ export default {
   props: {
     postUserName: {
       type: String,
-      default: 'Vue太郎'
+      default: ''
     },
-    postedDate: {
+    createdAt: {
       type: String,
-      default: '2020-02-24 21:00'
+      default: ''
     },
     postContent: {
       type: String,
-      default: '公式の日本語ドキュメントがReactより充実していて困らない。'
+      default: ''
     },
     side: {
       type: String,
@@ -55,7 +55,7 @@ export default {
       font-size: 12px;
       color: $main-color2;
     }
-    > .posted-date {
+    > .created-at {
       font-size: 11px;
       color: $main-color3;
     }

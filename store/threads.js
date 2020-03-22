@@ -26,6 +26,14 @@ export const actions = {
     commit('pushThreads', res.data)
   },
 
+  async fetchThread({ commit }, threadId) {
+    const res = await axios
+      .get('http://localhost:5000/threads/' + threadId)
+      .catch((error) => console.error(error))
+    const threads = [res.data]
+    commit('pushThreads', threads)
+  },
+
   async publishThread({ commit }, thread) {
     const threadId = await axios
       .post('http://localhost:5000/threads', thread)

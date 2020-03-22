@@ -18,16 +18,10 @@
           あなたの立ち位置から意見を書き込もう！
         </h2>
         <div class="toggle-buttons">
-          <ToggleRadioButton
-            v-model="position"
-            :label="theme1"
-            value="theme1"
-          ></ToggleRadioButton>
-          <ToggleRadioButton
-            v-model="position"
-            :label="theme2"
-            value="theme2"
-          ></ToggleRadioButton>
+          <ToggleRadioButton v-model="position" :label="theme1" value="theme1">
+          </ToggleRadioButton>
+          <ToggleRadioButton v-model="position" :label="theme2" value="theme2">
+          </ToggleRadioButton>
         </div>
         <textarea v-model="$v.content.$model" class="textarea"></textarea>
         <button
@@ -99,6 +93,7 @@ export default {
         createdDate: this.$dayjs().format('YYYY-MM-DD'),
         createdTime: this.$dayjs().format('HH:mm:ss'),
         position: this.position,
+        side: this.position === this.theme1 ? 'left' : 'right',
         content: this.content
       }
       this.$store.dispatch('posts/publishPost', post)
