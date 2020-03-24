@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar header" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <nuxt-link to="/" class="navbar-item">
         <img class="logo" src="~/assets/images/fire.svg" />
         Versus
-      </a>
+      </nuxt-link>
       <a
         v-click-outside="hide"
         :class="{ 'is-active': isOpen }"
