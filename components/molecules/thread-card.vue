@@ -5,10 +5,12 @@
   >
     <div class="card">
       <div class="card-content">
-        <div class="level is-mobile">
-          <div class="level-item">{{ theme1 }}</div>
-          <img class="level-item vs" src="~/assets/images/vs.svg" />
-          <div class="level-item">{{ theme2 }}</div>
+        <div class="columns is-mobile has-text-centered is-vcentered">
+          <div class="column is-5">{{ theme1 }}</div>
+          <div class="column is-2">
+            <img class="vs" src="~/assets/images/vs.svg" />
+          </div>
+          <div class="column is-5">{{ theme2 }}</div>
         </div>
       </div>
     </div>
@@ -37,12 +39,10 @@ export default {
 <style lang="scss" scoped>
 .thread-card {
   .card {
+    border: solid $main-color4 1px;
     .card-content {
-      .level {
-        .vs {
-          width: 30px;
-          height: 30px;
-        }
+      .vs {
+        width: 70px;
       }
     }
   }

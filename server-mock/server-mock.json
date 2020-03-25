@@ -6,7 +6,7 @@
       "createdUserName": "test-user-001",
       "createdDate": "2020-03-13",
       "createdTime": "19:00:00",
-      "theme1": "Vue.js",
+      "theme1": "Vue",
       "theme2": "React"
     },
     {
@@ -23,7 +23,7 @@
       "createdDate": "2020-03-13",
       "createdTime": "19:00:00",
       "theme1": "Angular",
-      "theme2": "Vue.js"
+      "theme2": "Vue"
     }
   ],
 
