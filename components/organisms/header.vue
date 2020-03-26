@@ -66,6 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  border-bottom: solid $main-color1 2px;
   .navbar-brand {
     .navbar-item {
       .logo {
