@@ -36,7 +36,7 @@
       "createdTime": "17:00:00",
       "position": "Vue.js",
       "side": "left",
-      "content": "Vue.jsが好きです。"
+      "content": "公式の日本語ドキュメントがReactより充実していて困らない。"
     },
     {
       "postId": "002",
@@ -46,7 +46,7 @@
       "createdTime": "18:00:00",
       "position": "React",
       "side": "right",
-      "content": "Reactが好きです。"
+      "content": "Vueと比べ、TypeScriptとの相性が良く、保守性が高い。また、海外での人気は React が勝っているため、今後廃れる可能性も低い。"
     },
     {
       "postId": "003",
@@ -56,7 +56,7 @@
       "createdTime": "19:00:00",
       "position": "React",
       "side": "right",
-      "content": "Angularが好きです。"
+      "content": "Vueと比べ、TypeScriptとの相性が良く、保守性が高い。また、海外での人気は React が勝っているため、今後廃れる可能性も低い。"
     }
   ]
 }
