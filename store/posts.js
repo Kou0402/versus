@@ -1,4 +1,5 @@
 import axios from 'axios'
+import dayjs from 'dayjs'
 
 export const state = () => ({
   posts: []
@@ -29,6 +30,10 @@ export const actions = {
     })
     res.data.sort(function(a, b) {
       return a.createdAt > b.createdAt ? 1 : -1
+    })
+
+    res.data.forEach((post) => {
+      post.createdAt = dayjs(post.createdAt).format('YYYY/MM/DD HH:mm:ss')
     })
 
     commit('pushPosts', res.data)

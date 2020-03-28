@@ -5,14 +5,16 @@
       :theme1="thread.theme1"
       :theme2="thread.theme2"
     ></ThreadCard>
-    <PostCard
-      v-for="post in posts"
-      :key="post.postId"
-      :post-user-name="post.createdUserName"
-      :created-at="post.createAt"
-      :post-content="post.content"
-      :side="post.side"
-    ></PostCard>
+    <section class="content-area">
+      <PostCard
+        v-for="post in posts"
+        :key="post.postId"
+        :post-user-name="post.createdUserName"
+        :created-at="post.createdAt"
+        :post-content="post.content"
+        :side="post.side"
+      ></PostCard>
+    </section>
     <PostForm
       :theme1="thread.theme1"
       :theme2="thread.theme2"
@@ -53,3 +55,22 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.thread {
+  margin: 15px 0 0 0;
+  .content-area {
+    margin: 15px 0 0 0;
+    padding-bottom: 14vh;
+    .post-card {
+      margin-bottom: 12px;
+    }
+    .post-card.left-side {
+      margin-left: 12px;
+    }
+    .post-card.right-side {
+      margin-right: 12px;
+    }
+  }
+}
+</style>

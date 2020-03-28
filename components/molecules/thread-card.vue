@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .thread-card {
+  font-size: 1.5rem;
   .card {
     border: solid $main-color4 1px;
     .card-content {

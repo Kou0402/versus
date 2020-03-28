@@ -47,7 +47,8 @@ export default {
 <style lang="scss" scoped>
 .post-card {
   background-color: $main-color5;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 18px 18px 18px 18px;
+  padding: 6px 14px;
   max-width: 70%;
   > .post-info {
     display: flex;
@@ -56,12 +57,14 @@ export default {
       color: $main-color2;
     }
     > .created-at {
+      margin: 0 6px;
       font-size: 11px;
       color: $main-color3;
     }
   }
   > .post-content {
     font-size: 14px;
+    width: auto;
   }
 }
 .left-side {

@@ -31,7 +31,7 @@
     {
       "postId": "001",
       "threadId": "001",
-      "createdUserName": "test-user-001",
+      "createdUserName": "名無し",
       "createdDate": "2020-03-13",
       "createdTime": "17:00:00",
       "position": "Vue.js",
@@ -41,7 +41,7 @@
     {
       "postId": "002",
       "threadId": "001",
-      "createdUserName": "test-user-002",
+      "createdUserName": "名無し",
       "createdDate": "2020-03-13",
       "createdTime": "18:00:00",
       "position": "React",
@@ -51,7 +51,37 @@
     {
       "postId": "003",
       "threadId": "001",
-      "createdUserName": "test-user-003",
+      "createdUserName": "名無し",
+      "createdDate": "2020-03-13",
+      "createdTime": "19:00:00",
+      "position": "React",
+      "side": "right",
+      "content": "Vueと比べ、TypeScriptとの相性が良く、保守性が高い。また、海外での人気は React が勝っているため、今後廃れる可能性も低い。"
+    },
+    {
+      "postId": "004",
+      "threadId": "001",
+      "createdUserName": "名無し",
+      "createdDate": "2020-03-13",
+      "createdTime": "19:00:00",
+      "position": "React",
+      "side": "right",
+      "content": "Vueと比べ、TypeScriptとの相性が良く、保守性が高い。また、海外での人気は React が勝っているため、今後廃れる可能性も低い。"
+    },
+    {
+      "postId": "005",
+      "threadId": "001",
+      "createdUserName": "名無し",
+      "createdDate": "2020-03-13",
+      "createdTime": "19:00:00",
+      "position": "React",
+      "side": "right",
+      "content": "Vueと比べ、TypeScriptとの相性が良く、保守性が高い。また、海外での人気は React が勝っているため、今後廃れる可能性も低い。"
+    },
+    {
+      "postId": "006",
+      "threadId": "001",
+      "createdUserName": "名無し",
       "createdDate": "2020-03-13",
       "createdTime": "19:00:00",
       "position": "React",
