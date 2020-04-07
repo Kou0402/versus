@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar header" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <nuxt-link to="/" class="navbar-item">
         <img class="logo" src="~/assets/images/fire.svg" />
         Versus
-      </a>
+      </nuxt-link>
       <a
         v-click-outside="hide"
         :class="{ 'is-active': isOpen }"
@@ -66,6 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  border-bottom: solid $main-color1 2px;
   .navbar-brand {
     .navbar-item {
       .logo {
@@ -73,6 +74,10 @@ export default {
         height: 28px;
       }
     }
+  }
+  .navbar-menu.is-active {
+    position: absolute;
+    width: 100%;
   }
 }
 </style>

@@ -6,17 +6,27 @@
           <ToggleRadioButton v-model="position" :label="theme1" value="theme1">
           </ToggleRadioButton>
         </div>
-        <div class="column is-5 input-area">
+        <div class="column is-5">
           <ToggleRadioButton v-model="position" :label="theme2" value="theme2">
           </ToggleRadioButton>
         </div>
       </div>
-      <div class="columns is-mobile">
+      <div class="columns is-mobile text-area">
         <div class="column is-8 is-offset-1">
-          <textarea v-model="content" class="textarea" rows="1"></textarea>
+          <textarea
+            v-model="$v.content.$model"
+            class="textarea"
+            rows="1"
+          ></textarea>
         </div>
         <div class="column is-2">
-          <img src="~/assets/images/right-arrow.svg" @click="onClickSubmit" />
+          <button
+            :disabled="$v.$invalid"
+            class="submit-button"
+            @click="onClickSubmit"
+          >
+            <img src="~/assets/images/right-arrow.svg" class="right-arrow" />
+          </button>
         </div>
       </div>
     </div>
@@ -24,6 +34,7 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
 import ToggleRadioButton from '~/components/molecules/toggle-radio-button.vue'
 
 export default {
@@ -48,6 +59,11 @@ export default {
     return {
       position: 'theme1',
       content: ''
+    }
+  },
+  validations: {
+    content: {
+      required
     }
   },
   methods: {
@@ -79,19 +95,31 @@ export default {
   // height: 12%;
   height: 14%;
   background-color: $main-color4;
-  > .form-area {
-    > .select-area {
+  .form-area {
+    .select-area {
       margin-top: 0;
       margin-bottom: 0;
-      > .column {
+      .column {
         padding-top: 10px;
         padding-bottom: 10px;
+        text-align: center;
       }
     }
-    > .input-area {
-      margin-top: 0;
-      > .column {
-        padding-top: 0;
+    .text-area {
+      .column {
+        text-align: center;
+        .submit-button {
+          padding: 0;
+          border: none;
+          background: transparent;
+          &:disabled {
+            opacity: 0.2;
+          }
+          .right-arrow {
+            display: block;
+            width: 45px;
+          }
+        }
       }
     }
   }

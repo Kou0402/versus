@@ -1,8 +1,10 @@
 <template>
-  <main>
+  <main class="thread-create">
     <div class="columns is-mobile">
       <div class="column is-10 is-offset-1 has-text-centered">
-        <h2 class="has-text-centered">二つのテーマを決めよう！</h2>
+        <h2 class="guide-message has-text-centered">
+          二つのテーマを決めよう！
+        </h2>
         <div class="field">
           <div class="control">
             <input v-model="$v.theme1.$model" class="input" type="text" />
@@ -14,7 +16,7 @@
             <input v-model="$v.theme2.$model" class="input" type="text" />
           </div>
         </div>
-        <h2 class="has-text-centered">
+        <h2 class="guide-message has-text-centered">
           あなたの立ち位置から意見を書き込もう！
         </h2>
         <div class="toggle-buttons">
@@ -25,7 +27,7 @@
         </div>
         <textarea v-model="$v.content.$model" class="textarea"></textarea>
         <button
-          class="button"
+          class="button is-primary"
           :disabled="$v.$invalid"
           @click="onClickCreateThreadButton"
         >
@@ -103,9 +105,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vs {
-  width: 30px;
-  height: 30px;
-  margin-top: 5px;
+.thread-create {
+  .guide-message {
+    margin: 30px 0;
+  }
+  .vs {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+  }
+  .toggle-buttons {
+    margin: 0 0 30px 0;
+  }
+  .textarea {
+    margin: 0 0 30px 0;
+  }
 }
 </style>
