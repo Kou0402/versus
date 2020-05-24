@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import { uuid } from 'vue-uuid'
 import { required } from 'vuelidate/lib/validators'
 import ToggleRadioButton from '~/components/molecules/toggle-radio-button.vue'
 
@@ -48,6 +49,7 @@ export default {
   },
   data() {
     return {
+      threadId: '',
       theme1: '',
       theme2: '',
       position: 'theme1',
@@ -67,10 +69,9 @@ export default {
   },
   methods: {
     onClickCreateThreadButton() {
+      this.threadId = uuid.v4()
       this.publishThread()
-      const threads = this.$store.getters['threads/threads']
-      const createdThread = threads.pop()
-      this.publishPost(createdThread.threadId)
+      this.publishPost(this.threadId)
     },
 
     changeValue(newValue) {
@@ -79,6 +80,7 @@ export default {
 
     publishThread() {
       const thread = {
+        threadId: this.threadId,
         createdUserName: undefined,
         createdDate: this.$dayjs().format('YYYY-MM-DD'),
         createdTime: this.$dayjs().format('HH:mm:ss'),

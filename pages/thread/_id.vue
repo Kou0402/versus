@@ -46,7 +46,7 @@ export default {
     }
   },
   async created() {
-    await this.$store.dispatch('threads/fetchThread', this.$route.params.id)
+    await this.$store.dispatch('threads/fetchThreads', this.$route.params.id)
     const threads = this.$store.getters['threads/threads']
     this.thread = threads[0]
 

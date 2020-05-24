@@ -19,26 +19,18 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetchThreads({ commit }) {
+  async fetchThreads({ commit }, threadId) {
+    threadId = threadId || ''
     const res = await axios
-      .get('http://localhost:5000/threads')
+      .get('https://api.versus-web.net/threads/' + threadId)
       .catch((error) => console.error(error))
     commit('pushThreads', res.data)
   },
 
-  async fetchThread({ commit }, threadId) {
-    const res = await axios
-      .get('http://localhost:5000/threads/' + threadId)
-      .catch((error) => console.error(error))
-    const threads = [res.data]
-    commit('pushThreads', threads)
-  },
-
   async publishThread({ commit }, thread) {
-    const threadId = await axios
-      .post('http://localhost:5000/threads', thread)
+    await axios
+      .post('https://api.versus-web.net/threads', thread)
       .catch((error) => console.error(error))
-    thread.threadId = threadId
     const threads = [thread]
     commit('pushThreads', threads)
   },
