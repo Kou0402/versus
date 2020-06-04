@@ -21,7 +21,7 @@ export const actions = {
       threadId
     }
     const res = await axios
-      .get('http://localhost:5000/posts', params)
+      .get('https://api.versus-web.net/posts', params)
       .catch((error) => console.error(error))
 
     res.data.forEach((post) => {
@@ -41,7 +41,7 @@ export const actions = {
 
   async publishPost({ commit }, post) {
     await axios
-      .post('http://localhost:5000/posts', post)
+      .post('https://api.versus-web.net/posts', post)
       .catch((error) => console.error(error))
     const posts = [post]
     commit('pushPosts', posts)

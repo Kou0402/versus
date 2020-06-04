@@ -72,6 +72,7 @@ export default {
       this.threadId = uuid.v4()
       this.publishThread()
       this.publishPost(this.threadId)
+      this.$router.push('/')
     },
 
     changeValue(newValue) {
@@ -81,7 +82,7 @@ export default {
     publishThread() {
       const thread = {
         threadId: this.threadId,
-        createdUserName: undefined,
+        createdUserName: 'guest',
         createdDate: this.$dayjs().format('YYYY-MM-DD'),
         createdTime: this.$dayjs().format('HH:mm:ss'),
         theme1: this.theme1,
@@ -93,7 +94,7 @@ export default {
     publishPost(threadId) {
       const post = {
         threadId,
-        createdUserName: undefined,
+        createdUserName: 'guest',
         createdDate: this.$dayjs().format('YYYY-MM-DD'),
         createdTime: this.$dayjs().format('HH:mm:ss'),
         position: this.position,
