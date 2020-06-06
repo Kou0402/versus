@@ -20,6 +20,7 @@ export default {
     ThreadCard
   },
   async fetch({ store }) {
+    store.dispatch('threads/deleteThreads')
     await store.dispatch('threads/fetchThreads')
   },
   computed: {

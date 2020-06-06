@@ -71,17 +71,19 @@ export default {
       this.publishPost(this.threadId)
     },
 
-    publishPost(threadId) {
+    async publishPost(threadId) {
       const post = {
         threadId,
-        createdUserName: undefined,
+        createdUserName: 'guest',
         createdDate: this.$dayjs().format('YYYY-MM-DD'),
         createdTime: this.$dayjs().format('HH:mm:ss'),
         position: this.position,
         side: this.position === this.theme1 ? 'left' : 'right',
         content: this.content
       }
-      this.$store.dispatch('posts/publishPost', post)
+      await this.$store.dispatch('posts/publishPost', post)
+      this.$store.dispatch('posts/deletePosts')
+      this.$store.dispatch('posts/fetchPosts', threadId)
     }
   }
 }

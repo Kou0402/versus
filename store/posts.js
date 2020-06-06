@@ -12,6 +12,10 @@ export const getters = {
 export const mutations = {
   pushPosts(state, posts) {
     posts.forEach((post) => state.posts.push(post))
+  },
+
+  setPosts(state, posts) {
+    state.posts = posts
   }
 }
 
@@ -45,5 +49,9 @@ export const actions = {
       .catch((error) => console.error(error))
     const posts = [post]
     commit('pushPosts', posts)
+  },
+
+  deletePosts({ commit }) {
+    commit('setPosts', [])
   }
 }

@@ -91,7 +91,7 @@ export default {
       this.$store.dispatch('threads/publishThread', thread)
     },
 
-    publishPost(threadId) {
+    async publishPost(threadId) {
       const post = {
         threadId,
         createdUserName: 'guest',
@@ -101,7 +101,8 @@ export default {
         side: this.position === this.theme1 ? 'left' : 'right',
         content: this.content
       }
-      this.$store.dispatch('posts/publishPost', post)
+      await this.$store.dispatch('posts/publishPost', post)
+      this.$store.dispatch('posts/deletePosts')
     }
   }
 }

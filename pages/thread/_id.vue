@@ -41,8 +41,12 @@ export default {
         threadId: '',
         theme1: '',
         theme2: ''
-      },
-      posts: []
+      }
+    }
+  },
+  computed: {
+    posts() {
+      return this.$store.getters['posts/posts']
     }
   },
   async created() {
@@ -51,7 +55,9 @@ export default {
     this.thread = threads[0]
 
     await this.$store.dispatch('posts/fetchPosts', threads[0].threadId)
-    this.posts = this.$store.getters['posts/posts']
+  },
+  beforeDestroy() {
+    this.$store.dispatch('posts/deletePosts')
   }
 }
 </script>
