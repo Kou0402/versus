@@ -21,7 +21,7 @@ export const actions = {
       threadId
     }
     const res = await axios
-      .get('https://api.versus-web.net/posts', params)
+      .get('https://api.versus-web.net/posts', { params })
       .catch((error) => console.error(error))
 
     res.data.forEach((post) => {
