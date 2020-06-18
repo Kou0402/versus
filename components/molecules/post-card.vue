@@ -53,6 +53,7 @@ export default {
   > .post-info {
     display: flex;
     > .post-user-name {
+      line-height: 16px;
       font-size: 12px;
       color: $main-color2;
     }
