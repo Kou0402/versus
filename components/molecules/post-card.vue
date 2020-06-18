@@ -8,12 +8,18 @@
       <div class="created-at">{{ createdAt }}</div>
     </section>
     <section class="post-content">
-      <p>{{ postContent }}</p>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <p v-html="$sanitize(formatedPostContent)"></p>
     </section>
   </article>
 </template>
 
 <script>
+import Vue from 'vue'
+import sanitizeHTML from 'sanitize-html'
+
+Vue.prototype.$sanitize = sanitizeHTML
+
 export default {
   props: {
     postUserName: {
@@ -39,6 +45,9 @@ export default {
     },
     isRightSide() {
       return this.side === 'right'
+    },
+    formatedPostContent() {
+      return this.postContent.replace(/\n/g, '<br />')
     }
   }
 }
