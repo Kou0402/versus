@@ -67,8 +67,9 @@ export default {
     }
   },
   methods: {
-    onClickSubmit() {
-      this.publishPost(this.threadId)
+    async onClickSubmit() {
+      await this.publishPost(this.threadId)
+      this.clearForm()
     },
 
     async publishPost(threadId) {
@@ -84,6 +85,10 @@ export default {
       await this.$store.dispatch('posts/publishPost', post)
       this.$store.dispatch('posts/deletePosts')
       this.$store.dispatch('posts/fetchPosts', threadId)
+    },
+
+    clearForm() {
+      this.content = ''
     }
   }
 }
