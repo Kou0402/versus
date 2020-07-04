@@ -20,3 +20,11 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## deploy
+$ docker tag nuxt-ssr:0.0.3 477233028522.dkr.ecr.ap-northeast-1.amazonaws.com/nuxt-ssr:0.0.3
+$ aws ecr get-login-password | docker login --username AWS --password-stdin https://477233028522.dkr.ecr.ap-northeast-1.amazonaws.com
+$ docker push 477233028522.dkr.ecr.ap-northeast-1.amazonaws.com/nuxt-ssr:0.0.3
+
+タスク定義の更新
+サービスの更新
