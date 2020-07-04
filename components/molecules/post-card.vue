@@ -84,5 +84,10 @@ export default {
   > .post-info {
     flex-direction: row-reverse;
   }
+  > .post-content {
+    > p {
+      text-align: right;
+    }
+  }
 }
 </style>

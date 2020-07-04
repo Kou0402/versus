@@ -5,7 +5,7 @@
       :theme1="thread.theme1"
       :theme2="thread.theme2"
     ></ThreadCard>
-    <section class="content-area">
+    <section ref="contentArea" class="content-area">
       <PostCard
         v-for="post in posts"
         :key="post.postId"
@@ -58,6 +58,18 @@ export default {
   },
   beforeDestroy() {
     this.$store.dispatch('posts/deletePosts')
+  },
+  updated() {
+    this.scrollToEnd()
+  },
+  methods: {
+    scrollToEnd() {
+      this.$nextTick(() => {
+        const contentArea = this.$refs.contentArea
+        if (!contentArea) return
+        contentArea.scrollTop = contentArea.scrollHeight
+      })
+    }
   }
 }
 </script>
@@ -67,7 +79,8 @@ export default {
   margin: 15px 0 0 0;
   .content-area {
     margin: 15px 0 0 0;
-    padding-bottom: 14vh;
+    height: 62vh;
+    overflow: scroll;
     .post-card {
       margin-bottom: 12px;
     }
