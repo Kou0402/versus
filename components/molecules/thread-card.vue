@@ -3,15 +3,15 @@
     :to="{ name: 'thread-id', params: { id: threadId } }"
     class="thread-card"
   >
-    <div class="card">
-      <div class="card-content">
-        <div class="columns is-mobile has-text-centered is-vcentered">
-          <div class="column is-5">{{ theme1 }}</div>
-          <div class="column is-2">
-            <img class="vs" src="~/assets/images/vs.svg" />
-          </div>
-          <div class="column is-5">{{ theme2 }}</div>
-        </div>
+    <div class="card-container">
+      <div class="wrapper">
+        <p>{{ theme1 }}</p>
+      </div>
+      <div class="wrapper center">
+        <img class="icon" src="~/assets/images/vs.svg" />
+      </div>
+      <div class="wrapper">
+        <p>{{ theme2 }}</p>
       </div>
     </div>
   </nuxt-link>
@@ -39,12 +39,24 @@ export default {
 <style lang="scss" scoped>
 .thread-card {
   font-size: 1.5rem;
-  .card {
+  .card-container {
+    display: flex;
+    justify-content: space-around;
     border: solid $main-color4 1px;
-    .card-content {
-      .vs {
-        width: 70px;
+    height: 100px;
+    .wrapper {
+      text-align: center;
+      align-items: center;
+      width: 40%;
+      line-height: 100px;
+      &.center {
+        width: 20%;
       }
+    }
+    .icon {
+      vertical-align: middle;
+      height: 35px;
+      width: 35px;
     }
   }
 }

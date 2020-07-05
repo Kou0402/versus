@@ -99,8 +99,7 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
-  // height: 12%;
-  height: 14%;
+  height: 120px;
   background-color: $main-color4;
   .form-area {
     .select-area {

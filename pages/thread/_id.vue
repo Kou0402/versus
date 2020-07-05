@@ -49,6 +49,12 @@ export default {
       return this.$store.getters['posts/posts']
     }
   },
+  mounted() {
+    this.$nextTick(function() {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    })
+  },
   async created() {
     await this.$store.dispatch('threads/fetchThreads', this.$route.params.id)
     const threads = this.$store.getters['threads/threads']
@@ -79,7 +85,7 @@ export default {
   margin: 15px 0 0 0;
   .content-area {
     margin: 15px 0 0 0;
-    height: 62vh;
+    height: calc(100 * var(--vh, 1vh) - 310px);
     overflow: scroll;
     .post-card {
       margin-bottom: 12px;

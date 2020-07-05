@@ -11,6 +11,10 @@ $sub-color1: #07132F;
 $primary: $main-color1;
 @import "~bulma/bulma";
 
+a {
+  color: $sub-color1;
+}
+
 .line-group {
   display: inline-block;
   margin-right: -4px;
