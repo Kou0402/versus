@@ -30,7 +30,7 @@ export const actions = {
 
     res.data.forEach((post) => {
       const createdAt = post.createdDate + ' ' + post.createdTime
-      post.createdAt = Date.parse(createdAt)
+      post.createdAt = Date.parse(createdAt.replace(/-/g, '/'))
     })
     res.data.sort(function(a, b) {
       return a.createdAt > b.createdAt ? 1 : -1
