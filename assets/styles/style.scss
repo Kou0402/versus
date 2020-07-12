@@ -1,0 +1,24 @@
+$main-color1: #EC532A;
+$main-color2: #F7BAAA;
+$main-color3: #FAD6CC;
+$main-color4: #FBDDD4;
+$main-color5: #FEF3F0;
+$sub-color1: #07132F;
+
+// Customize Bulma
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+$primary: $main-color1;
+@import "~bulma/bulma";
+
+a {
+  color: $sub-color1;
+}
+
+.line-group {
+  display: inline-block;
+  margin-right: -4px;
+}
+
+
+
