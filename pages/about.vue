@@ -5,17 +5,15 @@
         <div class="container has-text-centered">
           <h1 class="title">Enjoy comparison communication!</h1>
           <h2 class="subtitle">
-            <span class="line-group"
-              >Versus（バーサス）はエンジニアのための</span
-            >
-            <span class="line-group">比較コミュニケーションサービスです。</span>
+            <span class="line-group">Versus（バーサス）は「比較」を楽しむ</span>
+            <span class="line-group">コミュニケーションサービスです。</span>
           </h2>
         </div>
       </div>
     </section>
     <section class="message-area">
       <p>
-        Versusは「比較」を通して、エンジニアリングを楽しむ一つの手段となることを目的としています。
+        Versusは「比較」を通して、コミュニケーションを楽しむ一つの手段となることを目的としています。
         根拠のない誹謗中傷、差別的発言は禁止しています。
         様々な意見を尊重し、楽しく利用しましょう。
       </p>
