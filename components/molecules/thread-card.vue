@@ -38,17 +38,25 @@ export default {
 
 <style lang="scss" scoped>
 .thread-card {
-  font-size: 1.5rem;
+  font-size: 16px;
+  @media screen and (min-width: 960px) {
+  }
   .card-container {
     display: flex;
     justify-content: space-around;
     border: solid $main-color4 1px;
     height: 100px;
     .wrapper {
-      text-align: center;
+      display: flex;
+      justify-content: center;
       align-items: center;
       width: 40%;
-      line-height: 100px;
+      word-wrap: break-word;
+      text-align: center;
+      p {
+        // 親が Flex の場合の折り返し対応
+        min-width: 0;
+      }
       &.center {
         width: 20%;
       }
