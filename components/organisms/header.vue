@@ -30,13 +30,13 @@
         <nuxt-link to="/" class="navbar-item">
           ホーム
         </nuxt-link>
-        <nuxt-link to="thread-create" class="navbar-item">
+        <nuxt-link to="/thread-create" class="navbar-item">
           スレッド作成
         </nuxt-link>
-        <nuxt-link to="about" class="navbar-item">
+        <nuxt-link to="/about" class="navbar-item">
           Versusについて
         </nuxt-link>
-        <nuxt-link to="contact" class="navbar-item">
+        <nuxt-link to="/contact" class="navbar-item">
           お問い合わせ
         </nuxt-link>
       </div>
